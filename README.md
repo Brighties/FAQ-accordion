@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Click here](https://github.com/Brighties/FAQ-accordion.git)
-- Live Site URL: [Click here](https://your-live-site-url.com)
+- Live Site URL: [Click here](https://leafy-jalebi-6077da.netlify.app/)
 
 ## My process
 
@@ -57,10 +57,4 @@ Making it more robust by using more SASS functions so as to master SASS even mor
 ## Author
 
 - Frontend Mentor - [@Brighties](https://www.frontendmentor.io/profile/Brighties)
-- Twitter - [@bright_snipe](https://www.twitter.com/yourusername)
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
+- Twitter - [@bright_snipe](https://www.twitter.com/bright_snipe)
