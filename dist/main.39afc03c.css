@@ -1,0 +1,281 @@
+/* background color */
+/* TEXT */
+/* headers and active state color */
+/* FONT SIZES */
+/* UTILITY CLASSES */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Padding dimensions List / array */
+/* media query mixin */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* TYPOGRAPHY */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.3rem;
+}
+
+body {
+  background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+.accordion-container {
+  background-color: hsl(240, 5%, 91%);
+  background-image: url("/bg-pattern-mobile.0fb10e67.svg");
+  background-position: center -5%;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1200px) {
+  .accordion-container {
+    background-color: hsl(240, 5%, 91%);
+    background-image: url("/bg-pattern-desktop.2f784f63.svg");
+    background-position: 305% 80%;
+    background-repeat: no-repeat;
+  }
+}
+/* GENERAL SETTINGS */
+.accordion-container {
+  position: relative;
+  border-radius: 25px;
+  padding: 2rem;
+  padding-top: 10rem;
+  max-width: 50%;
+}
+
+.accordion__logo {
+  position: absolute;
+  top: -3%; /* Move the top edge to the vertical center */
+  left: 50%; /* Move the left edge to the horizontal center */
+  transform: translate(-50%, -50%); /* Center the image precisely */
+  width: 200px;
+  aspect-ratio: 1;
+}
+
+/* ============================= */
+/* MEDIA QUERY */
+@media screen and (min-width: 1200px) {
+  .accordion-container {
+    padding: 3rem;
+    padding-left: 20%;
+  }
+  .accordion__logo {
+    top: 45%; /* Move the top edge to the vertical center */
+    left: 10%; /* Move the left edge to the horizontal center */
+    width: 300px;
+  }
+}
+/* ============================= */
+.accordion__general-header {
+  font-size: 2.4rem;
+}
+
+/* General styles for the accordion container */
+.accordion__content-container {
+  border-bottom: 1px solid hsl(240, 6%, 50%);
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  align-items: center;
+  position: relative;
+  height: max-content;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  color: hsl(240, 6%, 50%);
+}
+
+/* Header styles */
+.accordion__header-content {
+  color: hsl(237, 12%, 33%);
+  font-weight: 500;
+  transition: font-weight 200ms ease-in-out;
+}
+
+.accordion__header-content:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+/* Icon styles */
+.icon {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.accordion__dropdown-icon {
+  color: hsl(14, 88%, 65%);
+  transition: transform 300ms ease-in-out;
+}
+
+.accordion__header-container {
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Hidden checkbox */
+.accordion__checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+/* SPECIFIC RULES */
+.accordion__content-1-pane,
+.accordion__content-2-pane,
+.accordion__content-3-pane,
+.accordion__content-4-pane,
+.accordion__content-5-pane {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden; /* Hide content that overflows the max-height */
+  transition: max-height 0.2s ease-in-out, opacity 0.3s ease-in-out; /* Add transitions */
+}
+
+.checkbox-1:checked ~ .accordion__header-1 .accordion__icon-1,
+.checkbox-2:checked ~ .accordion__header-2 .accordion__icon-2,
+.checkbox-3:checked ~ .accordion__header-3 .accordion__icon-3,
+.checkbox-4:checked ~ .accordion__header-4 .accordion__icon-4,
+.checkbox-5:checked ~ .accordion__header-5 .accordion__icon-5 {
+  transform: rotate(180deg);
+}
+
+/* Styles for the content pane when checkbox is checked */
+.checkbox-1:checked ~ .accordion__content-1-pane,
+.checkbox-2:checked ~ .accordion__content-2-pane,
+.checkbox-3:checked ~ .accordion__content-3-pane,
+.checkbox-4:checked ~ .accordion__content-4-pane,
+.checkbox-5:checked ~ .accordion__content-5-pane {
+  opacity: 1;
+  max-height: 100%;
+  transition: max-height 0.2s ease-in-out, opacity 0.3s ease-in-out; /* Add transitions */
+}
+
+/* Style the .accordion__header-content when its associated checkbox is checked 
+* the font-weight changes to Bold.
+*/
+.checkbox-1:checked + .accordion__header-1 .accordion__header-1-content,
+.checkbox-2:checked + .accordion__header-2 .accordion__header-2-content,
+.checkbox-3:checked + .accordion__header-3 .accordion__header-3-content,
+.checkbox-4:checked + .accordion__header-4 .accordion__header-4-content,
+.checkbox-5:checked + .accordion__header-5 .accordion__header-5-content {
+  transition: font-weight 0.2s ease-in-out, color 0.3s ease-in-out;
+  font-weight: bold;
+  color: hsl(238, 29%, 16%);
+}
+
+/* ATTRIBUTION COMPONENT */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=/main.39afc03c.css.map */

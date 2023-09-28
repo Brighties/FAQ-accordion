@@ -1,0 +1,40 @@
+
+$dark-blue: hsl(240, 6%, 50%);
+/* background color */
+$bg-light-blue: hsl(240, 5%, 91%);
+
+/* TEXT */
+$soft-red: hsl(14, 88%, 65%);
+/* headers and active state color */
+$very-dark-blue: hsl(238, 29%, 16%);
+$very-dark-grayish-blue: hsl(237, 12%, 33%);
+
+/* FONT SIZES */
+$font-sm: 1.3rem;
+$font-md: 1.8rem;
+$font-lg: 2.4rem;
+
+/* UTILITY CLASSES */
+.flex {
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
+
+/* Padding dimensions List / array */
+$padding: 1rem 2rem 3rem 10rem; // this creates a list of values
+
+
+/* media query mixin */
+@mixin desktop {
+    @media screen and (min-width: 1200px){
+        @content;
+    }
+}

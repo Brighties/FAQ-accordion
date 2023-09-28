@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+.accordion-container {
+    background-color: $bg-light-blue;
+    background-image: url('./images/bg-pattern-mobile.svg');
+    background-position: center -5%;
+    background-repeat: no-repeat;
+}
+@include desktop {
+    .accordion-container {
+        background-color: $bg-light-blue;
+        background-image: url('./images/bg-pattern-desktop.svg');
+        background-position: 305% 80%;
+        background-repeat: no-repeat;
+    }
+}
